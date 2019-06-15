@@ -15,6 +15,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/test', function () {
-    echo "test";
-});
+Route::get('user/{id}', 'IndexController@show'
+    
+)->where('id', '[0-9]+');
+
+Route::get('/admin', 'Admin\IndexController@index');

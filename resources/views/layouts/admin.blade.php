@@ -1,39 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <!-- Meta, title, CSS, favicons, etc. -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Gentelella Alela! | </title>
-
+    
     <!-- Bootstrap -->
-    <link href="{{ URL::asset('public/vendors/bootstrap/dist/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ URL::asset('/vendors/bootstrap/dist/css/bootstrap.min.css') }}" rel="stylesheet">
     <!-- Font Awesome -->
-    <link href="{{ URL::asset('public/vendors/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet">
+    <link href="{{ URL::asset('/vendors/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet">
     <!-- NProgress -->
-    <link href="{{ URL::asset('public/vendors/nprogress/nprogress.css') }}" rel="stylesheet">
+    <link href="{{ URL::asset('/vendors/nprogress/nprogress.css') }}" rel="stylesheet">
     <!-- iCheck -->
-    <link href="{{ URL::asset('public/vendors/iCheck/skins/flat/green.css') }}" rel="stylesheet">
+    <link href="{{ URL::asset('/vendors/iCheck/skins/flat/green.css') }}" rel="stylesheet">
 	
     <!-- bootstrap-progressbar -->
-    <link href="{{ URL::asset('public/vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css') }}" rel="stylesheet">
+    <link href="{{ URL::asset('/vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css') }}" rel="stylesheet">
     <!-- JQVMap -->
-    <link href="{{ URL::asset('public/vendors/jqvmap/dist/jqvmap.min.css') }}" rel="stylesheet"/>
+    <link href="{{ URL::asset('/vendors/jqvmap/dist/jqvmap.min.css') }}" rel="stylesheet"/>
     <!-- bootstrap-daterangepicker -->
-    <link href="{{ URL::asset('public/vendors/bootstrap-daterangepicker/daterangepicker.css') }}" rel="stylesheet">
+    <link href="{{ URL::asset('/vendors/bootstrap-daterangepicker/daterangepicker.css') }}" rel="stylesheet">
 
     <!-- Custom Theme Style -->
-    <link href="{{ URL::asset('public/build/css/custom.min.css') }}" rel="stylesheet">
+    <link href="{{ URL::asset('/build/css/custom.min.css') }}" rel="stylesheet">
     
     <!--public\vendors\layer-->
-    <script src="{{ URL::asset('public/vendors/layer/layer.js') }}"></script>
-    <!--<link href="{{ URL::asset('public/vendors/layer/layer.js') }}" rel="stylesheet">-->
+    <script src="{{ URL::asset('/vendors/layer/layer.js') }}"></script>
+    <!--<link href="{{ URL::asset('/vendors/layer/layer.js') }}" rel="stylesheet">-->
     
     <!-- jQuery -->
-    <script src="{{ URL::asset('public/vendors/jquery/dist/jquery.min.js') }}"></script>
+    <script src="{{ URL::asset('vendors/jquery/dist/jquery.min.js') }}"></script>
   </head>
 
   <body class="nav-md">
@@ -44,13 +44,12 @@
             <div class="navbar nav_title" style="border: 0;">
               <a href="{{ url('admin/index') }}" class="site_title"><i class="fa fa-paw"></i> <span>Gentelella Alela!</span></a>
             </div>
-
             <div class="clearfix"></div>
 
             <!-- menu profile quick info -->
             <div class="profile clearfix">
               <div class="profile_pic">
-                <img src="{{ URL::asset('public/images/img.jpg') }}" alt="..." class="img-circle profile_img">
+                <img src="{{ URL::asset('/images/img.jpg') }}" alt="..." class="img-circle profile_img">
               </div>
               <div class="profile_info">
                 <span>Welcome,</span>
@@ -60,7 +59,7 @@
             <!-- /menu profile quick info -->
 
             <br />
-
+            
             <!-- sidebar menu -->
             <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
               <div class="menu_section">
@@ -73,7 +72,7 @@
                       <li><a href="index3.html">Dashboard3</a></li>
                     </ul>
                   </li>
-                  <li><a><i class="fa fa-edit"></i> 文章管理 <span class="fa fa-chevron-down"></span></a>
+                  <li><a><i class="fa fa-edit"></i>  文章管理<span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="{{url('/admin/category')}}">分類列表</a></li>
                       <li><a href="{{url('/admin/category/create')}}">新增文章分類</a></li>
@@ -81,7 +80,7 @@
                       <li><a href="{{url('/admin/article/create')}}">新增文章</a></li>
                     </ul>
                   </li>
-                  <li><a><i class="fa fa-chain"></i> 友情鏈接管理 <span class="fa fa-chevron-down"></span></a>
+                  <li><a><i class="fa fa-chain"></i> 友情鏈接管理<span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="{{url('/admin/links')}}">鏈接列表</a></li>
                       <li><a href="{{url('/admin/links/create')}}">新增鏈接</a></li>
@@ -195,7 +194,7 @@
                   <ul class="dropdown-menu dropdown-usermenu pull-right">
                     <li><a href="javascript:;"> Profile</a></li>
                     <li>
-                      <a href="{{url('admin/pass')}}">修改密碼</a>
+                      <a href="{{url('admin/pass')}}"></a>
                     </li>
                     <li><a href="javascript:;">Help</a></li>
                     <li><a href="{{url('admin/quit')}}"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
@@ -210,7 +209,7 @@
                   <ul id="menu1" class="dropdown-menu list-unstyled msg_list" role="menu">
                     <li>
                       <a>
-                        <span class="image"><img src="{{ URL::asset('public/images/img.jpg')}}" alt="Profile Image" /></span>
+                        <span class="image"><img src="{{ URL::asset('/images/img.jpg')}}" alt="Profile Image" /></span>
                         <span>
                           <span>John Smith</span>
                           <span class="time">3 mins ago</span>
@@ -222,7 +221,7 @@
                     </li>
                     <li>
                       <a>
-                        <span class="image"><img src="{{ URL::asset('public/images/img.jpg')}}" alt="Profile Image" /></span>
+                        <span class="image"><img src="{{ URL::asset('/images/img.jpg')}}" alt="Profile Image" /></span>
                         <span>
                           <span>John Smith</span>
                           <span class="time">3 mins ago</span>
@@ -234,7 +233,7 @@
                     </li>
                     <li>
                       <a>
-                        <span class="image"><img src="{{ URL::asset('public/images/img.jpg')}}" alt="Profile Image" /></span>
+                        <span class="image"><img src="{{ URL::asset('/images/img.jpg')}}" alt="Profile Image" /></span>
                         <span>
                           <span>John Smith</span>
                           <span class="time">3 mins ago</span>
@@ -246,7 +245,7 @@
                     </li>
                     <li>
                       <a>
-                        <span class="image"><img src="{{ URL::asset('public/images/img.jpg')}}" alt="Profile Image" /></span>
+                        <span class="image"><img src="{{ URL::asset('/images/img.jpg')}}" alt="Profile Image" /></span>
                         <span>
                           <span>John Smith</span>
                           <span class="time">3 mins ago</span>
@@ -277,7 +276,7 @@
         <!-- footer content -->
         <footer>
           <div class="pull-right">
-            Gentelella - Bootstrap Admin Template by Colorlib. More Templates <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a> - Collect from <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a>
+            Gentelella - Bootstrap Admin Template by Colorlib. More Templates <a href="http://www.cssmoban.com/" target="_blank" title="模�?��?�?">模�?��?�?</a> - Collect from <a href="http://www.cssmoban.com/" title="�?页模??" target="_blank">�?页模??</a>
           </div>
           <div class="clearfix"></div>
         </footer>
@@ -287,44 +286,44 @@
 
     
     <!-- Bootstrap -->
-    <script src="{{ URL::asset('public/vendors/bootstrap/dist/js/bootstrap.min.js') }}"></script>
+    <script src="{{ URL::asset('/vendors/bootstrap/dist/js/bootstrap.min.js') }}"></script>
     <!-- FastClick -->
-    <script src="{{ URL::asset('public/vendors/fastclick/lib/fastclick.js') }}"></script>
+    <script src="{{ URL::asset('/vendors/fastclick/lib/fastclick.js') }}"></script>
     <!-- NProgress -->
-    <script src="{{ URL::asset('public/vendors/nprogress/nprogress.js') }}"></script>
+    <script src="{{ URL::asset('/vendors/nprogress/nprogress.js') }}"></script>
     <!-- validator -->
-    <script src="{{ URL::asset('public/vendors/validator/validator.js') }}"></script>
+    <script src="{{ URL::asset('/vendors/validator/validator.js') }}"></script>
     <!-- Chart.js -->
-    <script src="{{ URL::asset('public/vendors/Chart.js/dist/Chart.min.js') }}"></script>
+    <script src="{{ URL::asset('/vendors/Chart.js/dist/Chart.min.js') }}"></script>
     <!-- gauge.js -->
-    <script src="{{ URL::asset('public/vendors/gauge.js/dist/gauge.min.js') }}"></script>
+    <script src="{{ URL::asset('/vendors/gauge.js/dist/gauge.min.js') }}"></script>
     <!-- bootstrap-progressbar -->
-    <script src="{{ URL::asset('public/vendors/bootstrap-progressbar/bootstrap-progressbar.min.js') }}"></script>
+    <script src="{{ URL::asset('/vendors/bootstrap-progressbar/bootstrap-progressbar.min.js') }}"></script>
     <!-- iCheck -->
-    <script src="{{ URL::asset('public/vendors/iCheck/icheck.min.js') }}"></script>
+    <script src="{{ URL::asset('/vendors/iCheck/icheck.min.js') }}"></script>
     <!-- Skycons -->
-    <script src="{{ URL::asset('public/vendors/skycons/skycons.js') }}"></script>
+    <script src="{{ URL::asset('/vendors/skycons/skycons.js') }}"></script>
     <!-- Flot -->
-    <script src="{{ URL::asset('public/vendors/Flot/jquery.flot.js') }}"></script>
-    <script src="{{ URL::asset('public/vendors/Flot/jquery.flot.pie.js') }}"></script>
-    <script src="{{ URL::asset('public/vendors/Flot/jquery.flot.time.js') }}"></script>
-    <script src="{{ URL::asset('public/vendors/Flot/jquery.flot.stack.js') }}"></script>
-    <script src="{{ URL::asset('public/vendors/Flot/jquery.flot.resize.js') }}"></script>
+    <script src="{{ URL::asset('/vendors/Flot/jquery.flot.js') }}"></script>
+    <script src="{{ URL::asset('/vendors/Flot/jquery.flot.pie.js') }}"></script>
+    <script src="{{ URL::asset('/vendors/Flot/jquery.flot.time.js') }}"></script>
+    <script src="{{ URL::asset('/vendors/Flot/jquery.flot.stack.js') }}"></script>
+    <script src="{{ URL::asset('/vendors/Flot/jquery.flot.resize.js') }}"></script>
     <!-- Flot plugins -->
-    <script src="{{ URL::asset('public/vendors/flot.orderbars/js/jquery.flot.orderBars.js') }}"></script>
-    <script src="{{ URL::asset('public/vendors/flot-spline/js/jquery.flot.spline.min.js') }}"></script>
-    <script src="{{ URL::asset('public/vendors/flot.curvedlines/curvedLines.js') }}"></script>
+    <script src="{{ URL::asset('/vendors/flot.orderbars/js/jquery.flot.orderBars.js') }}"></script>
+    <script src="{{ URL::asset('/vendors/flot-spline/js/jquery.flot.spline.min.js') }}"></script>
+    <script src="{{ URL::asset('/vendors/flot.curvedlines/curvedLines.js') }}"></script>
     <!-- DateJS -->
-    <script src="{{ URL::asset('public/vendors/DateJS/build/date.js') }}"></script>
+    <script src="{{ URL::asset('/vendors/DateJS/build/date.js') }}"></script>
      <!--JQVMap--> 
-    <script src="{{ URL::asset('public/vendors/jqvmap/dist/jquery.vmap.js') }}"></script>
-    <script src="{{ URL::asset('public/vendors/jqvmap/dist/maps/jquery.vmap.world.js') }}"></script>
-    <script src="{{ URL::asset('public/vendors/jqvmap/examples/js/jquery.vmap.sampledata.js') }}"></script>
+    <script src="{{ URL::asset('/vendors/jqvmap/dist/jquery.vmap.js') }}"></script>
+    <script src="{{ URL::asset('/vendors/jqvmap/dist/maps/jquery.vmap.world.js') }}"></script>
+    <script src="{{ URL::asset('/vendors/jqvmap/examples/js/jquery.vmap.sampledata.js') }}"></script>
     <!-- bootstrap-daterangepicker -->
-    <script src="{{ URL::asset('public/vendors/moment/min/moment.min.js') }}"></script>
-    <script src="{{ URL::asset('public/vendors/bootstrap-daterangepicker/daterangepicker.js') }}"></script>
+    <script src="{{ URL::asset('/vendors/moment/min/moment.min.js') }}"></script>
+    <script src="{{ URL::asset('/vendors/bootstrap-daterangepicker/daterangepicker.js') }}"></script>
 
     <!-- Custom Theme Scripts -->
-    <script src="{{ URL::asset('public/build/js/custom.min.js') }}"></script>
+    <script src="{{ URL::asset('/build/js/custom.min.js') }}"></script>
   </body>
 </html>
