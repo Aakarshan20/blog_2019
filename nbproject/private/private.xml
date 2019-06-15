@@ -3,6 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/xampp/htdocs/a.com/blog_2019/database/migrations/2019_06_15_152944_create_test_table.php</file>
+            <file>file:/C:/xampp/htdocs/a.com/blog_2019/database/migrations/2019_06_15_165434_create_blog_test_table.php</file>
+            <file>file:/C:/xampp/htdocs/a.com/blog_2019/database/seeds/testTableSeeder.php</file>
+            <file>file:/C:/xampp/htdocs/a.com/blog_2019/database/migrations/2019_06_15_162345_modify_test_table.php</file>
+            <file>file:/C:/xampp/htdocs/a.com/blog_2019/config/database.php</file>
+            <file>file:/C:/xampp/htdocs/a.com/blog_2019/database/migrations/2019_06_15_165609_create_test_table.php</file>
+            <file>file:/C:/xampp/htdocs/a.com/blog_2019/routes/web.php</file>
             <file>file:/C:/xampp/htdocs/a.com/blog_2019/.env</file>
         </group>
     </open-files>
