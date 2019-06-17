@@ -10,16 +10,16 @@
         <title>Gentelella Alela! | </title>
 
         <!-- Bootstrap -->
-        <link href="{{ URL::asset('public/vendors/bootstrap/dist/css/bootstrap.min.css') }}" rel="stylesheet">
+        <link href="{{ URL::asset('/vendors/bootstrap/dist/css/bootstrap.min.css') }}" rel="stylesheet">
         <!-- Font Awesome -->
-        <link href="{{ URL::asset('public/vendors/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet">
+        <link href="{{ URL::asset('/vendors/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet">
         <!-- NProgress -->
-        <link href="{{ URL::asset('public/vendors/nprogress/nprogress.css') }}" rel="stylesheet">
+        <link href="{{ URL::asset('/vendors/nprogress/nprogress.css') }}" rel="stylesheet">
         <!-- Animate.css -->
-        <link href="{{ URL::asset('public/vendors/animate.css/animate.min.css') }}" rel="stylesheet">
+        <link href="{{ URL::asset('/vendors/animate.css/animate.min.css') }}" rel="stylesheet">
 
         <!-- Custom Theme Style -->
-        <link href="{{ URL::asset('public/build/css/custom.min.css') }}" rel="stylesheet">
+        <link href="{{ URL::asset('/build/css/custom.min.css') }}" rel="stylesheet">
         <script>
             function postForm() {
  

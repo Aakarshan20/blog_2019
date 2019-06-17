@@ -194,7 +194,7 @@
                   <ul class="dropdown-menu dropdown-usermenu pull-right">
                     <li><a href="javascript:;"> Profile</a></li>
                     <li>
-                      <a href="{{url('admin/pass')}}"></a>
+                      <a href="{{url('admin/pass')}}">ä¿®æ”¹å¯†ç¢¼</a>
                     </li>
                     <li><a href="javascript:;">Help</a></li>
                     <li><a href="{{url('admin/quit')}}"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
@@ -276,7 +276,7 @@
         <!-- footer content -->
         <footer>
           <div class="pull-right">
-            Gentelella - Bootstrap Admin Template by Colorlib. More Templates <a href="http://www.cssmoban.com/" target="_blank" title="æ¨¡æ?¿ä?å®?">æ¨¡æ?¿ä?å®?</a> - Collect from <a href="http://www.cssmoban.com/" title="ç½?é¡µæ¨¡??" target="_blank">ç½?é¡µæ¨¡??</a>
+            Gentelella - Bootstrap Admin Template by Colorlib. More Templates <a href="http://www.cssmoban.com/" target="_blank" title="æ¨¡ï¿½?ï¿½ï¿½?ï¿½?">æ¨¡ï¿½?ï¿½ï¿½?ï¿½?</a> - Collect from <a href="http://www.cssmoban.com/" title="ï¿½?é¡µæ¨¡??" target="_blank">ï¿½?é¡µæ¨¡??</a>
           </div>
           <div class="clearfix"></div>
         </footer>
