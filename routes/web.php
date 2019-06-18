@@ -11,17 +11,13 @@
 |
 */
 Route::group(['middleware'=>['web']], function(){
-    Route::get('/', function () {
-        return view('welcome');
-    });
+    //Route::get('/', function () {
+      //  return view('welcome');
+    //});
+    Route::get('/', 'IndexController@index');
 
-    //Route::get('/test', 'ViewController@index');
-    Route::get('/view', 'ViewController@view');
-    Route::get('/article', 'ViewController@article');
-    Route::get('layouts', 'ViewController@layouts');
-    
-    Route::get('admin/login', 'Admin\IndexController@login');
-    Route::get('admin/code', 'Admin\IndexController@code');
+    Route::any('admin/login', 'Admin\LoginController@login');
+    Route::get('admin/code', 'Admin\LoginController@code');
 });
 
 
