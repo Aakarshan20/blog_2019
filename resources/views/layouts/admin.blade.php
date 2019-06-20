@@ -196,6 +196,9 @@
                     <li>
                       <a href="{{url('admin/pass')}}">修改密碼</a>
                     </li>
+                    <li>
+                      <a href="{{url('admin/pass')}}"><?php echo date('Y年m月d日 H時i分s秒')?></a>
+                    </li>
                     <li><a href="javascript:;">Help</a></li>
                     <li><a href="{{url('admin/quit')}}"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
                   </ul>

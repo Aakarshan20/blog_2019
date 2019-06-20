@@ -28,10 +28,10 @@ class LoginController extends CommonController
             }
             
             session(['user'=>$user]);
-            echo "OK";
+            return redirect('admin/index');
             
         }else{
-            
+            session(['user'=>null]);
             
             return view('admin.login');
         }
@@ -43,11 +43,9 @@ class LoginController extends CommonController
         $code->imgcode(165,34);
     }
     
-    public function crypt(){
-        $str = '123456';
-        
-        echo $crypt = Crypt::encrypt($str);
-        echo Crypt::decrypt($crypt);
+    public function quit(){
+        session(['user'=>null]);
+        return redirect('admin/login');
     }
     
 }

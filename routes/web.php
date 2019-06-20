@@ -24,6 +24,11 @@ Route::group(['middleware'=>['web']], function(){
 
 Route::group(['prefix'=>'admin', 'namespace'=>'Admin', 'middleware'=>['web', 'admin.login']], function(){
     Route::get('/', 'IndexController@index');
+    Route::get('index', 'IndexController@index');
+    Route::get('quit', 'LoginController@quit');
+    Route::any('pass', 'IndexController@pass');
+    
+    Route::get('/index2', 'IndexController@index2');
     Route::resource('article', 'ArticleController');
 });
 

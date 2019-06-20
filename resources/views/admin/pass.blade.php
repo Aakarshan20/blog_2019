@@ -27,7 +27,7 @@
             <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel" style="text-align:center">
                     <div class="x_title">
-                        <h2>帳戶管理<small>修改密碼</small></h2>
+                        <h2>修改密碼</h2>
                         <div class="clearfix"></div>
                     </div>
                         <div class="x_content">
@@ -38,7 +38,7 @@
                                     <div class="alert alert-danger" role="alert">
                                     @if(is_object($errors))
                                         @foreach($errors->all() as $error)
-                                                {{$error}}
+                                                {{$error}}<br/>
                                         @endforeach
                                     @else
                                         {{$errors}}
@@ -57,14 +57,14 @@
                                     <label for="inputPassword3" class="col-sm-2 col-form-label" for="name2">舊密碼</label>
                                     <div class="col-md-6 col-sm-6 col-xs-12">
                                         <input type="password" class="form-control" id="inputPassword3" name='password_o'
-                                               placeholder="請輸入舊密碼6-12位" required='required'>
+                                               placeholder="請輸入舊密碼6-12位" required="required">
                                     </div>
                                 </div>
                                 <div class="item form-group row" style="text-align:right">
                                     <label for="inputPassword3" class="col-sm-2 col-form-label">新密碼</label>
                                     <div class="col-md-6 col-sm-6 col-xs-12">
                                         <input type="password" class="form-control" id="inputPassword3" name='password'
-                                               placeholder="請輸入新密碼6-12位" required='required'>
+                                               placeholder="請輸入新密碼6-20位" required="required">
                                     </div>
                                 </div>
                                 <div class="item form-group row" style="text-align:right">
@@ -72,7 +72,7 @@
                                     <div class="col-md-6 col-sm-6 col-xs-12">
                                         <input type="password" class="form-control" id="inputPassword3" 
                                                name='password_confirmation'
-                                               placeholder="請確認新密碼6-12位" required='required'>
+                                               placeholder="請確認新密碼6-20位" required="required">
                                     </div>
                                 </div>
                                 <div class="form-group row">
