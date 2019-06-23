@@ -34,6 +34,10 @@
     
     <!-- jQuery -->
     <script src="{{ URL::asset('vendors/jquery/dist/jquery.min.js') }}"></script>
+    
+    <!--layer layui-->
+    <script src="{{URL:: asset('vendors/layer/layer.js')}}"></script>
+    
   </head>
 
   <body class="nav-md">

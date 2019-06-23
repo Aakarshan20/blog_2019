@@ -4,8 +4,9 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
-//use Illuminate\Contracts\Validation\Validator;
+use Illuminate\Support\Facades\Crypt;
 use \Validator;
+use App\Http\Model\User;
 
 class IndexController extends CommonController
 {
@@ -20,16 +21,14 @@ class IndexController extends CommonController
     //更改超級管理員密碼
     public function pass(){
         if($input = Input::all()){
-            //dd($input);
             $rules = [
-                'password_o'=>'required|between:6,20',
+                'password_o'=>'required',
                 'password'=>'required|between:6,20|confirmed',
                 'password_confirmation'=>'required|between:6,20',
             ];
             
             $message = [
                 'password_o.required'=>'舊密碼不得為空',
-                'password_o.between'=>'舊密碼必須在6-20位之間',
                 
                 'password.required'=>'新密碼不得為空',
                 'password.between'=>'新密碼必須在6-20位之間',
@@ -42,7 +41,16 @@ class IndexController extends CommonController
             $validator = Validator::make($input, $rules, $message);
             
             if($validator->passes()){
-                echo "OK";
+                $user = User::first();
+                
+                $_password = Crypt::decrypt($user->user_pass);
+                if($input['password_o'] == $_password){
+                    $user->user_pass = Crypt::encrypt($input['password']);
+                    $user->update();
+                    return redirect('admin')->with(['success'=>'密碼更新成功']);
+                }else{
+                    return back()->with('errors', '原密碼錯誤');
+                }
             }else{
                 return back()->withErrors($validator);
             }

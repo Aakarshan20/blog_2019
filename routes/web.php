@@ -29,7 +29,11 @@ Route::group(['prefix'=>'admin', 'namespace'=>'Admin', 'middleware'=>['web', 'ad
     Route::any('pass', 'IndexController@pass');
     
     Route::get('/index2', 'IndexController@index2');
-    Route::resource('article', 'ArticleController');
+    
+    Route::post('cate/changeorder', 'CategoryController@changeOrder');
+    
+    Route::resource('category','CategoryController');
+    Route::resource('article','ArticleController');
 });
 
 

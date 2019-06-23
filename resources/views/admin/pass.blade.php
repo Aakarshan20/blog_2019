@@ -57,7 +57,7 @@
                                     <label for="inputPassword3" class="col-sm-2 col-form-label" for="name2">舊密碼</label>
                                     <div class="col-md-6 col-sm-6 col-xs-12">
                                         <input type="password" class="form-control" id="inputPassword3" name='password_o'
-                                               placeholder="請輸入舊密碼6-12位" required="required">
+                                               placeholder="請輸入舊密碼" required="required">
                                     </div>
                                 </div>
                                 <div class="item form-group row" style="text-align:right">

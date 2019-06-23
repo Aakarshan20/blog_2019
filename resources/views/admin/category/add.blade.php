@@ -37,7 +37,8 @@
                                 @if(count($errors)>0)
                                     <div class="alert alert-danger" role="alert">
                                     @if(is_object($errors))
-                                        @foreach($errors->all() as $error)
+                                        <?php  $err_unique = array_unique($errors->all()) ?>
+                                        @foreach($err_unique as $error)
                                                 {{"【" . $error . "】"}}<br/>
                                         @endforeach
                                     @else

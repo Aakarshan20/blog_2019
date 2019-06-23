@@ -23,10 +23,11 @@
             <div class="clearfix"></div>
 
             <div class="row">
-
-              
-
-             
+                @if(session('success'))
+                <div class="alert alert-success" role="alert">
+                    {{session('success')}}
+                </div>
+                @endif
 
               <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
@@ -43,7 +44,7 @@
                           </li>
                         </ul>
                       </li>
-                      <li><a class="close-link"><i class="fa fa-close"></i></a>
+                      <li><a class="close-link" href="/admin/category" onclick="reload()"><i class="fa fa-refresh"></i></a>
                       </li>
                     </ul>
                     <div class="clearfix"></div>
@@ -119,21 +120,61 @@
         $.post("{{url('admin/cate/changeorder')}}", 
                 {'_token':'{{csrf_token()}}', 'cate_id':cate_id, 'cate_order': cate_order}, 
                 function(data){
-                        alert(data.msg);
-        });
+                        if(data.status==0){
+                            layer.alert(data.msg, {icon: 6, btn:['確定']});
+                        }else if(data.status == 1){
+                            layer.alert(data.msg, {icon: 5, btn:['確定']});
+                        }else{
+                            layer.alert('未知錯誤...', {icon: 5, btn:['確定']});
+                        }
+                }
+        );
     }
     
     //刪除分類
     function delCate(cate_id){
-        if(confirm("確認刪除?")){
+        
+        layer.confirm('確認刪除此分類？', {
+            btn: ['確定','取消'] //按钮
+          }, function(){
+            //layer.msg(cate_id, {icon: 1});
             $.post("{{url('admin/category/')}}/"+cate_id,{'_method':'delete', '_token':'{{csrf_token()}}'}, function(data){
-                alert(data.msg);
-                if(data.status==0){    
+                if(data.status == 0){
                     location.href=location.href;
+                    layer.msg(data.msg, {
+                        icon: 6,
+                        time: 2000, //2s後自動關閉
+                    });
+                }else{
+                    location.href=location.href;
+                    layer.msg(data.msg, {
+                        icon: 5,
+                        time: 2000, //2s後自動關閉
+                    });
                 }
                 
             });
-        }
+            
+          }, function(){
+              
+          });
+        
+//        if(confirm("確認刪除?")){
+//            $.post("{{url('admin/category/')}}/"+cate_id,{'_method':'delete', '_token':'{{csrf_token()}}'}, function(data){
+//                alert(data.msg);
+//                if(data.status==0){    
+//                    location.href=location.href;
+//                }
+//                
+//            });
+    }
+    
+    
+    function reload(){
+        layer.msg('載入中...', {
+            icon: 16
+            ,shade: 0.01
+          });
     }
     
 </script>

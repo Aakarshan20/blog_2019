@@ -105,11 +105,9 @@
                                 <div class="form-group row">
                                     <div class="col-sm-5">
                                         <button id='send' type="submit" class="btn btn-primary">確認修改</button>
-                                        <button id='send' type="submit" class="btn btn-light" 
-                                                onclick="location.href='{{url('admin/index')}}'">返回</button>
+                                        <button id='send' type="submit" class="btn btn-light" >返回</button>
                                     </div>
                                 </div>
-                                
                             </form>
                         </div>
                 </div>
@@ -133,5 +131,11 @@
 
 }
 </style>
+<script>
+    public function backToCategory(){
+        alert(555);
+        location.href = "/admin/category";
+    }
+</script>
 <!-- /page content -->
 @endsection

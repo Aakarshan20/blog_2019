@@ -75,8 +75,8 @@
                                 <label for="inputPassword3" class="col-sm-2 col-form-label"> 縮圖</label>
                                 <!--<div class="col-md-4 col-sm-4 col-xs-12">-->
                                     
-                                    <link rel="stylesheet" type="text/css" href="{{asset('resources/org/Huploadify/Huploadify.css')}}"/>
-                                    <script type="text/javascript" src="{{asset('resources/org/Huploadify/jquery.Huploadify.js')}}"></script>
+                                    <link rel="stylesheet" type="text/css" href="{{asset('/Huploadify/Huploadify.css')}}"/>
+                                    <script type="text/javascript" src="{{asset('/Huploadify/jquery.Huploadify.js')}}"></script>
                                     <script type="text/javascript">
                                     $(function () {
                                         $('#upload').Huploadify({
@@ -162,9 +162,9 @@
                                 <!--<script type="text/javascript" charset="utf-8" src="{{URL::asset('public/ueditor/ueditor.all.min.js')}}"> </script>-->
                                 <!--<script type="text/javascript" charset="utf-8" src="{{URL::asset('public/ueditor/lang/zh-cn/zh-cn.js')}}"></script>-->
                                 <!-- 另種寫法 -->
-                                <script type="text/javascript" charset="utf-8" src="{{asset('resources/org/ueditor/ueditor.config.js')}}"></script>
-                                <script type="text/javascript" charset="utf-8" src="{{asset('resources/org/ueditor/ueditor.all.min.js')}}"></script>
-                                <script type="text/javascript" charset="utf-8" src="{{asset('resources/org/ueditor/lang/zh-cn/zh-cn.js')}}"></script>
+                                <script type="text/javascript" charset="utf-8" src="{{asset('/ueditor/ueditor.config.js')}}"></script>
+                                <script type="text/javascript" charset="utf-8" src="{{asset('/ueditor/ueditor.all.min.js')}}"></script>
+                                <script type="text/javascript" charset="utf-8" src="{{asset('/ueditor/lang/zh-cn/zh-cn.js')}}"></script>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
                                     <script id="editor" name="art_content" type="text/plain" style ='height:500px;' ></script>
                                 </div>
