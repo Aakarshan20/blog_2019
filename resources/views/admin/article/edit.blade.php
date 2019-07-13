@@ -52,9 +52,11 @@
                                     <select class="form-control" name="cate_id">
                                         @if(isset($data))
                                             @foreach($data as $v)
-                                            <option value="{{$v->cate_id}}"
-                                                    @if($field->cate_id == $v->cate_id) selected @endif
-                                            >{{$v->_cate_name}}</option>
+                                                <option value="{{$v->cate_id}}"  
+                                                        @if($v->cate_id == $field->cate_id)
+                                                        {{ 'selected' }}
+                                                        @endif
+                                                        >{{$v->_cate_name}}</option>
                                             @endforeach
                                         @endif
                                     </select>

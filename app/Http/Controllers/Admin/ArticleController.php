@@ -7,43 +7,42 @@ use Illuminate\Support\Facades\Input;
 use \Validator;
 
 
+
 class ArticleController extends CommonController
 {
     //get admin/article 全部文章列表
     public function index(){
-        echo "111";
+        $data = Article::all();
+        return view('admin.article.index', compact('data'));
     }
     
     //get admin/article/create 新增文章(介面)
     public function create(){
-        $data = Category::all();
-        return view('admin.article.add', compact(['data']));
+        $data = (new Category)->tree();
+        return view('admin.article.add', compact('data'));
     }
     
     //post admin/article 新增文章(提交)
     public function store(){
-        $input = Input::except('_token');
+        
+        $input = Input::except(['_token', 'fileselect']);
+        //dd($input);
          $rules = [
-                'cate_name'=>'required|between:1,50',
-                'cate_title'=>'required|between:1,100',
-                'cate_order'=>'required|integer|between:1,127',
+                
+                'art_title'=>'required|between:1,100',
+                'art_editor'=>'required',
             ];
             
             $message = [
-                'cate_name.required'=>'文章名稱不得為空',
-                'cate_name.between'=>'文章名稱必須在1-50位之間',
+                'art_title.required'=>'文章標題不得為空',
+                'art_title.between'=>'文章標題必須在1-100位之間',
                 
-                'cate_title.required'=>'文章標題不得為空',
-                'cate_title.between'=>'文章標題必須在1-100位之間',
-                
-                'cate_order.required'=>'排序不得為空',
-                'cate_order.integer'=>'排序須必須為1-127之間之整數',
-                'cate_order.between'=>'排序須必須為1-127之間之整數',
+                'art_editor.required'=>'文章作者不得為空',
             ];
             
             $validator = Validator::make($input, $rules, $message);
             if($validator->passes()){
-                $re = Category::create($input);
+                $re = Article::create($input);
                 
                 if($re){
                     return redirect('admin/article')->with(['success'=>'文章文章新增成功']);
@@ -55,31 +54,32 @@ class ArticleController extends CommonController
             }
     }
     
-     //get admin/article/{category}/edit  更新單個文章(介面)
-    public function edit($cate_id){
+     //get admin/article/{article}/edit  更新單個文章(介面)
+    public function edit($art_id){
         if(!session('success')){
             session(['success'=>null]);
         }
         
-        $field = Category::find($cate_id);
-        $data = Category::where('cate_pid', 0)->get();
+        $field = Article::find($art_id);
+        //$data = Category::where('cate_pid', 0)->get();
+        $data = (new Category)->tree();
         if(!isset($field)){
             return back()->withErrors('ID號不存在');
         }else{
-            return view('admin.category.edit', compact('field', 'data'));
+            return view('admin.article.edit', compact('field', 'data'));
         }
     }
     
-    //put|patch admin/article/{category} 更新單個文章(提交)
-    public function update($cate_id){
+    //put|patch admin/article/{article} 更新單個文章(提交)
+    public function update($art_id){
         $input = Input::except(['_token', '_method']);
         
-        $category = Category::find($cate_id);
+        $article = Article::find($art_id);
         
-        if(!isset($category)){
+        if(!isset($article)){
             return back()->withErrors('更新失敗, 請稍後重試');
         }else{
-            if($category->update($input)){
+            if($article->update($input)){
                 return redirect('admin/article/')->with(['success'=>'文章文章更新成功']);
             }else{
                 return back()->withErrors('文章訊息更新失敗, 請稍後重試');
@@ -89,14 +89,14 @@ class ArticleController extends CommonController
     
     //delete admin/article/{category} 刪除單個文章
     public function destroy($cate_id){
-        $category = Category::find($cate_id);
-        if(!isset($category)){
+        $article = Article::find($cate_id);
+        if(!isset($article)){
             return ['status'=>1, 'msg'=>'文章ID錯誤刪除失敗, 請稍後重試'];
         }else{
-            $re = $category->delete();
+            $re = $article->delete();
             
             if($re){
-               Category::where('cate_pid', $cate_id)->update(['cate_pid'=>0]);
+               Article::where('cate_pid', $cate_id)->update(['cate_pid'=>0]);
                return  ['status'=>0, 'msg'=>'文章刪除成功'];
             }else{
                return  ['status'=>1, 'msg'=>'文章刪除失敗, 請稍後重試'];

@@ -91,14 +91,14 @@
                                             //uploader: "{{asset('resources/org/Huploadify/upload.php')}}",
                                             uploader: "{{url('admin/upload')}}",
                                             onUploadStart: function () {
-//                                                alert('開始上傳');
+                                                //alert('開始上傳');
                                             },
                                             onInit: function () {
 //                                                alert('初始化');
                                             },
-//                                            onUploadComplete: function () {
-//                                                alert('上傳成功');
-//                                            },
+                                            onUploadComplete: function () {
+                                                alert('上傳成功');
+                                            },
 //                                            //完整參數版
 //                                            onUploadComplete: function (file, data, response) {
 //                                                alert('The file' + file.name + ' was successfully uploaded with a response ' 

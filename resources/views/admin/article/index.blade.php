@@ -83,7 +83,7 @@
                       
                     </table>
                           <div class="col-md-6 col-sm-6 col-xs-12" style="float:right;text-align: right">
-                              {{$data->links()}}
+                              
                           </div>
                   </div>
                 </div>
