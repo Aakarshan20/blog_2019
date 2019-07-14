@@ -18,7 +18,7 @@ class CommonController extends Controller
             //$realPath = $file->getRealPath();//這個表示的是緩存在tmp文件夾下的文件絕對路徑，例C:\xampp\tmp\phpF2EC.tmp
             
             $extension = $file->getClientOriginalExtension();//上傳文件的後綴
-            $newName = date('YmdHis').mt_rand(100,999).".".$extension; 
+            $newName = date('YmdHis').mt_rand(000,999).".".$extension; 
             //$path = $file->move(app_path() . '/storage/uploads', $newName);
             
             //$path = $file->move(base_path() . '/uploads', $newName);

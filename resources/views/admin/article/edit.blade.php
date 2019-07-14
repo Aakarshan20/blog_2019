@@ -71,7 +71,7 @@
                                 </div>
                             </div>
                             <div class="item form-group row" style="text-align:right">
-                                <label for="inputPassword3" class="col-sm-2 col-form-label">* 作者</label>
+                                <label for="inputPassword3" class="col-sm-2 col-form-label"> 作者</label>
                                 <div class="col-md-2 col-sm-2 col-xs-12">
                                     <input type="text" class="form-control" id="inputPassword3" name='art_editor'
                                            value="{{$field->art_editor}}"
@@ -82,8 +82,8 @@
                                 <label for="inputPassword3" class="col-sm-2 col-form-label"> 縮圖</label>
                                 <!--<div class="col-md-4 col-sm-4 col-xs-12">-->
                                     
-                                    <link rel="stylesheet" type="text/css" href="{{asset('resources/org/Huploadify/Huploadify.css')}}"/>
-                                    <script type="text/javascript" src="{{asset('resources/org/Huploadify/jquery.Huploadify.js')}}"></script>
+                                    <link rel="stylesheet" type="text/css" href="{{asset('/Huploadify/Huploadify.css')}}"/>
+                                    <script type="text/javascript" src="{{asset('/Huploadify/jquery.Huploadify.js')}}"></script>
                                     <script type="text/javascript">
                                     $(function () {
                                         $('#upload').Huploadify({
@@ -159,9 +159,9 @@
                             <div class="item form-group row" style="text-align:right">
 
                                 <label for="inputPassword3" class="control-label col-sm-2 col-form-label">* 文章內容</label>
-                                <script type="text/javascript" charset="utf-8" src="{{asset('resources/org/ueditor/ueditor.config.js')}}"></script>
-                                <script type="text/javascript" charset="utf-8" src="{{asset('resources/org/ueditor/ueditor.all.min.js')}}"></script>
-                                <script type="text/javascript" charset="utf-8" src="{{asset('resources/org/ueditor/lang/zh-cn/zh-cn.js')}}"></script>
+                                <script type="text/javascript" charset="utf-8" src="{{asset('/ueditor/ueditor.config.js')}}"></script>
+                                <script type="text/javascript" charset="utf-8" src="{{asset('/ueditor/ueditor.all.min.js')}}"></script>
+                                <script type="text/javascript" charset="utf-8" src="{{asset('/ueditor/lang/zh-cn/zh-cn.js')}}"></script>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
                                     <script id="editor" name="art_content" type="text/plain" style ='height:500px;' >
                                         {!! $field->art_content !!}

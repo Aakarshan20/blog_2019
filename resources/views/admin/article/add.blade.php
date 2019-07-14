@@ -65,7 +65,7 @@
                                 </div>
                             </div>
                             <div class="item form-group row" style="text-align:right">
-                                <label for="inputPassword3" class="col-sm-2 col-form-label">* 作者</label>
+                                <label for="inputPassword3" class="col-sm-2 col-form-label"> 作者</label>
                                 <div class="col-md-2 col-sm-2 col-xs-12">
                                     <input type="text" class="form-control" id="inputPassword3" name='art_editor'
                                            placeholder="請輸入作者" >

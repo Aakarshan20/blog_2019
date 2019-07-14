@@ -12,7 +12,7 @@ class ArticleController extends CommonController
 {
     //get admin/article 全部文章列表
     public function index(){
-        $data = Article::all();
+        $data = Article::orderBy('art_id', 'desc')->paginate(3);
         return view('admin.article.index', compact('data'));
     }
     
@@ -26,18 +26,17 @@ class ArticleController extends CommonController
     public function store(){
         
         $input = Input::except(['_token', 'fileselect']);
-        //dd($input);
          $rules = [
                 
                 'art_title'=>'required|between:1,100',
-                'art_editor'=>'required',
+                'art_content'=>'required',
             ];
             
             $message = [
                 'art_title.required'=>'文章標題不得為空',
                 'art_title.between'=>'文章標題必須在1-100位之間',
                 
-                'art_editor.required'=>'文章作者不得為空',
+                'art_content.required'=>'文章內容不得為空',
             ];
             
             $validator = Validator::make($input, $rules, $message);
@@ -72,18 +71,36 @@ class ArticleController extends CommonController
     
     //put|patch admin/article/{article} 更新單個文章(提交)
     public function update($art_id){
-        $input = Input::except(['_token', '_method']);
+        $input = Input::except(['_token', '_method', 'fileselect']);
         
-        $article = Article::find($art_id);
-        
-        if(!isset($article)){
-            return back()->withErrors('更新失敗, 請稍後重試');
-        }else{
-            if($article->update($input)){
-                return redirect('admin/article/')->with(['success'=>'文章文章更新成功']);
+        $rules = [
+                
+                'art_title'=>'required|between:1,100',
+                'art_content'=>'required',
+            ];
+            
+            $message = [
+                'art_title.required'=>'文章標題不得為空',
+                'art_title.between'=>'文章標題必須在1-100位之間',
+                
+                'art_content.required'=>'文章內容不得為空',
+            ];
+            
+        $validator = Validator::make($input, $rules, $message);
+        if($validator->passes()){
+            $article = Article::find($art_id);
+
+            if(!isset($article)){
+                return back()->withErrors('更新失敗, 請稍後重試');
             }else{
-                return back()->withErrors('文章訊息更新失敗, 請稍後重試');
-            }   
+                if($article->update($input)){
+                    return redirect('admin/article/')->with(['success'=>'文章文章更新成功']);
+                }else{
+                    return back()->withErrors('文章訊息更新失敗, 請稍後重試');
+                }   
+            }
+        }else{
+            return back()->withErrors($validator);
         }
     }
     
