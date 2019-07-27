@@ -105,15 +105,14 @@ class ArticleController extends CommonController
     }
     
     //delete admin/article/{category} 刪除單個文章
-    public function destroy($cate_id){
-        $article = Article::find($cate_id);
+    public function destroy($art_id){
+        $article = Article::find($art_id);
         if(!isset($article)){
             return ['status'=>1, 'msg'=>'文章ID錯誤刪除失敗, 請稍後重試'];
         }else{
             $re = $article->delete();
             
             if($re){
-               Article::where('cate_pid', $cate_id)->update(['cate_pid'=>0]);
                return  ['status'=>0, 'msg'=>'文章刪除成功'];
             }else{
                return  ['status'=>1, 'msg'=>'文章刪除失敗, 請稍後重試'];
