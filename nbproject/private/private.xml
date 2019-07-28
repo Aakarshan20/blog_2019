@@ -5,6 +5,8 @@
         <group>
             <file>file:/C:/xampp/htdocs/a.com/blog_2019/app/Http/Model/Article.php</file>
             <file>file:/C:/xampp/htdocs/a.com/blog_2019/resources/views/layouts/admin.blade.php</file>
+            <file>file:/C:/xampp/htdocs/a.com/blog_2019/database/seeds/DatabaseSeeder.php</file>
+            <file>file:/C:/xampp/htdocs/a.com/blog_2019/database/seeds/LinksTableSeeder.php</file>
             <file>file:/C:/xampp/htdocs/a.com/blog_2019/app/Http/Controllers/Admin/ArticleController.php</file>
             <file>file:/C:/xampp/htdocs/a.com/blog_2019/routes/web.php</file>
         </group>
