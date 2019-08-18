@@ -11,41 +11,52 @@ require_once __DIR__ . '/../../../../resources/org/code/code.php';
 
 class LoginController extends CommonController
 {
-    public function login(){
+    public function login()
+    {
         $input = Input::all();
-        if($input){
+        if ($input) {
             $code = new \Code;
             $_code = $code->get();
-            if(strtoupper($input['code'])!=strtoupper($_code)){
+            if (strtoupper($input['code']) != strtoupper($_code)) {
                 return back()->with('msg', '驗證碼錯誤');
             }
-            
+
             $user = User::first();
-            
-            if($user->user_name != $input['user_name'] || 
-                    Crypt::decrypt($user->user_pass) != $input['user_pass'] ){
+            if ($user->user_name != $input['user_name'] ||
+                Crypt::decrypt($user->user_pass) != $input['user_pass']) {
                 return back()->with('msg', '用戶名或密碼錯誤');
             }
-            
-            session(['user'=>$user]);
+
+            session(['user' => $user]);
             return redirect('admin/index');
-            
-        }else{
-            session(['user'=>null]);
-            
+
+        } else {
+            session(['user' => null]);
+
             return view('admin.login');
         }
-        
+
     }
-    
-    public function code(){
+
+    public function code()
+    {
         $code = new \Code();
-        $code->imgcode(165,34);
+        $code->imgcode(165, 34);
     }
-    
-    public function quit(){
-        session(['user'=>null]);
+
+    public function quit()
+    {
+        session(['user' => null]);
         return redirect('admin/login');
     }
-    
+
+    public function showPassword()
+    {
+        echo $encrypt = Crypt::encrypt("123456");
+        echo "<br/>";
+        echo $decrypt = Crypt::decrypt($encrypt);
+        echo "<br/>";
+        echo env('APP_KEY');
+    }
+
 }

@@ -22,22 +22,24 @@ Route::group(['middleware'=>['web']], function(){
 });
 
 
+Route::get('showPassword', 'Admin\LoginController@showPassword');
+
 Route::group(['prefix'=>'admin', 'namespace'=>'Admin', 'middleware'=>['web', 'admin.login']], function(){
     Route::get('/', 'IndexController@index');
     Route::get('index', 'IndexController@index');
     Route::get('quit', 'LoginController@quit');
     Route::any('pass', 'IndexController@pass');
-    
+
     Route::get('/index2', 'IndexController@index2');
-    
+
     Route::post('cate/changeorder', 'CategoryController@changeOrder');
-    
+
     Route::resource('category','CategoryController');
     Route::resource('article','ArticleController');
-    
+
     Route::resource('links','LinksController');
     Route::post('links/changeorder', 'LinksController@changeOrder');
-    
+
     //檔案上傳用
     Route::any('upload', 'CommonController@upload');
     //檔案刪除用
@@ -46,7 +48,7 @@ Route::group(['prefix'=>'admin', 'namespace'=>'Admin', 'middleware'=>['web', 'ad
 
 
 //Route::get('user/{id}', 'IndexController@show'
-//    
+//
 //)->where('id', '[0-9]+');
 
 //Route::get('user', ['as'=>'profile', function(){
