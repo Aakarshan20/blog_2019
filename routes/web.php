@@ -22,6 +22,7 @@ Route::group(['middleware'=>['web']], function(){
 });
 
 
+
 Route::get('showPassword', 'Admin\LoginController@showPassword');
 
 Route::group(['prefix'=>'admin', 'namespace'=>'Admin', 'middleware'=>['web', 'admin.login']], function(){

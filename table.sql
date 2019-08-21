@@ -25,5 +25,12 @@ insert into blog_category(cate_name, cate_title, cate_order, cate_pid)values
 ('奇摩體育', '最專業的體育賽事平台', 2, 2),
 ('MSN體育', '人氣最旺的體育平台', 3, 2);
 
+create table blog_article(
+	art_id int UNSIGNED not null auto_increment primary key,
+	cate_id int unsigned not null default '0',
+	art_title varchar(100) default null,
+	art_tag 
+)engine myisam charset utf8;
+
 
 
