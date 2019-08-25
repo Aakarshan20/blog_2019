@@ -11,7 +11,7 @@ class LinksController extends CommonController
 {
     //get admin/links 全部連接列表
     public function index(){
-        $data = Link::orderBy('link_order', 'asc')->paginate(3);
+        $data = Link::orderBy('link_order', 'asc')->paginate(15);
         return view('admin.links.index', compact('data'));
     }
 
