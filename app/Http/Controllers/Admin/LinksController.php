@@ -15,12 +15,12 @@ class LinksController extends CommonController
         return view('admin.links.index', compact('data'));
     }
 
-    //get admin/article/link 新增文章(介面)
+    //get admin/article/link 新增鏈結(介面)
     public function create(){
         return view('admin.links.add');
     }
 
-    //post admin/link 新增文章(提交)
+    //post admin/link 新增鏈結(提交)
     public function store(){
         $input = Input::except(['_token', '_method']);
         $rules = [
@@ -49,16 +49,16 @@ class LinksController extends CommonController
                 $re = Link::create($input);
 
                 if($re){
-                    return redirect('admin/links')->with(['success'=>'文章文章新增成功']);
+                    return redirect('admin/links')->with(['success'=>'鏈結新增成功']);
                 }else{
-                    return view('admin.links.add')->with(['errors'=>'文章文章新增失敗']);
+                    return view('admin.links.add')->with(['errors'=>'鏈結新增失敗']);
                 }
             }else{
                 return back()->withErrors($validator);
             }
     }
 
-     //get admin/links/{links}/edit  更新單個文章(介面)
+     //get admin/links/{links}/edit  更新單個鏈結(介面)
     public function edit($link_id){
         if(!session('success')){
             session(['success'=>null]);
@@ -72,7 +72,7 @@ class LinksController extends CommonController
         }
     }
 
-    //put|patch admin/link/{link} 更新單個文章(提交)
+    //put|patch admin/link/{link} 更新單個鏈結(提交)
     public function update($link_id){
         $input = Input::except(['_token', '_method']);
 

@@ -4,10 +4,9 @@ namespace App\Http\Model;
 
 use Illuminate\Database\Eloquent\Model;
 
-class User extends Model
+class Nav extends Model
 {
-    protected $table = 'user';
-    protected $primaryKey = 'user_id';
+    protected $primaryKey = 'nav_id';
     public $timestamps = false;
     protected $guarded = [];
 }
