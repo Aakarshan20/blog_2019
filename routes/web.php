@@ -47,6 +47,8 @@ Route::group(['prefix'=>'admin', 'namespace'=>'Admin', 'middleware'=>['web', 'ad
     Route::resource('config','ConfigController');
     Route::post('config/changeorder', 'ConfigController@changeOrder');
 
+    Route::post('config/changecontent', 'ConfigController@changeContent');//修改配置項內容
+
 
     //檔案上傳用
     Route::any('upload', 'CommonController@upload');
