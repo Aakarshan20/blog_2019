@@ -31,7 +31,7 @@
                         <div class="x_content">
                             <form action = '{{url('admin/config')}}' method = 'post' name="myForm">
                                 {{csrf_field()}}
-                                
+
                                 @if(count($errors)>0)
                                     <div class="alert alert-danger" role="alert">
                                     @if(is_object($errors))
@@ -44,7 +44,7 @@
                                     </div>
                                 @endif
                                 <div class="item form-group row" style="text-align:right">
-                                    <label for="inputPassword3" class="col-sm-2 col-form-label" 
+                                    <label for="inputPassword3" class="col-sm-2 col-form-label"
                                            for="name2">* 標題</label>
                                     <div class="col-md-6 col-sm-6 col-xs-12">
                                         <input type="text" class="form-control" id="inputPassword3" name='conf_title'
@@ -52,28 +52,28 @@
                                     </div>
                                 </div>
                                 <div class="item form-group row" style="text-align:right">
-                                    <label for="inputPassword3" class="col-sm-2 col-form-label" 
+                                    <label for="inputPassword3" class="col-sm-2 col-form-label"
                                            for="name2">* 名稱</label>
                                     <div class="col-md-6 col-sm-6 col-xs-12">
                                         <input type="text" class="form-control" id="inputPassword3" name='conf_name'
                                                placeholder="請輸入配置項名稱" >
                                     </div>
-                                </div>                          
+                                </div>
                                 <div class="item form-group row" style="text-align:right">
                                     <label for="inputPassword3" class="col-sm-2 col-form-label">* 字段類型</label>
                                     <div class="col-md-6 col-sm-6 col-xs-12" style="text-align:left">
-                                        
+
                                       <input type="radio"  name="field_type" id="typeInput" value="input"
                                              checked=""
                                              onclick="showFieldValue()"
-                                             required /> 
+                                             required />
                                       input　　
-                                      <input type="radio"  name="field_type" id="typeTextarea" value="textarea" 
+                                      <input type="radio"  name="field_type" id="typeTextarea" value="textarea"
                                              onclick="showFieldValue()" />
                                       textarea　　
-                                      <input type="radio"  name="field_type" id="typeRadio" value="radio" 
+                                      <input type="radio"  name="field_type" id="typeRadio" value="radio"
                                              onclick="showFieldValue()" />
-                                      radio　 
+                                      radio　
                                     </div>
                                 </div>
                                 <div class="item form-group row field_value" style="text-align:right">
@@ -85,7 +85,7 @@
                                 </div>
                                 <div class="item form-group row" style="text-align:right">
                                     <label for="inputPassword3" class="col-sm-2 col-form-label"> 排序</label>
-                                    <div class="col-md-2 col-sm-2 col-xs-12">
+                                    <div class="col-md-1 col-sm-1 col-xs-12">
                                         <input type="text" class="form-control" id="inputPassword3" name='conf_order'
                                                value="0"
                                                placeholder="請輸入排序" >
@@ -93,7 +93,7 @@
                                 </div>
                                 <div class="item form-group row" style="text-align:right">
                                     <label for="inputPassword3" class="col-sm-2 col-form-label"> 說明</label>
-                                    <div class="col-md-6 col-sm-6 col-xs-12">                                        
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
                                         <textarea class="resizable_textarea form-control" name="conf_tips"
                                               placeholder="請輸入說明"></textarea>
                                     </div>
@@ -101,11 +101,11 @@
                                 <div class="form-group row">
                                     <div class="col-sm-5">
                                         <button id='send' type="submit" class="btn btn-primary">確認新增</button>
-                                        <button id='send' type="submit" class="btn btn-light" 
+                                        <button id='send' type="submit" class="btn btn-light"
                                                 onclick="location.href='{{url('admin/index')}}'">返回</button>
                                     </div>
                                 </div>
-                                
+
                             </form>
                         </div>
                 </div>

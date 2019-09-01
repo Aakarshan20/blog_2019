@@ -44,6 +44,9 @@ Route::group(['prefix'=>'admin', 'namespace'=>'Admin', 'middleware'=>['web', 'ad
     Route::resource('navs','NavsController');
     Route::post('navs/changeorder', 'NavsController@changeOrder');
 
+    Route::resource('config','ConfigController');
+    Route::post('config/changeorder', 'ConfigController@changeOrder');
+
 
     //檔案上傳用
     Route::any('upload', 'CommonController@upload');

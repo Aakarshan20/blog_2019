@@ -31,7 +31,7 @@
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                       </li>
                       <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" 
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"
                            role="button" aria-expanded="false"><i class="fa fa-plus"></i></a>
                         <ul class="dropdown-menu" role="menu">
                           <li><a href="{{URL::asset('admin/config/create')}}">新增配置項</a>
@@ -44,8 +44,8 @@
                     <div class="clearfix"></div>
                   </div>
                   <div class="x_content">
-					
-                    <table id="datatable-responsive" class="table table-striped table-bordered dt-responsive nowrap" 
+
+                    <table id="datatable-responsive" class="table table-striped table-bordered dt-responsive nowrap"
                            cellspacing="0" width="100%">
                       <thead>
                         <tr>
@@ -53,7 +53,7 @@
                           <th style="width:5%">ID</th>
                           <th>標題</th>
                           <th>名稱</th>
-                          <th>地址</th>
+                          <th></th>
                           <th style="width:15%">操作</th>
                         </tr>
                       </thead>
@@ -62,7 +62,7 @@
                       <tbody>
                         <tr>
                           <td>
-                              <input type=text' name='conf_order' 
+                              <input type=text' name='conf_order'
                                      onchange="changeOrder(this, {{$v->conf_id}})"
                                      value='{{$v->conf_order}}' size=2>
                           </td>
@@ -77,7 +77,7 @@
                       </tbody>
                       @endforeach
                       @endif
-                    </table>	
+                    </table>
                   </div>
                 </div>
               </div>
@@ -88,18 +88,18 @@
 <script type="text/javascript">
     //obj: input object, conf_id 配置項的id
     function changeOrder(obj, conf_id){
-        //post csrf field 
+        //post csrf field
         //方法1: 把csrf token放到header>meta.attr('content')
         //再從裡面取出
         //$.ajaxSetup({headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')}});
         //post(url, 參數, callback(接收用的value){
         //
         //});
-        
+
         var conf_order = $(obj).val();
         //方法2: 在ajax的data中直接傳入'_token': 'csrf_token()'
-        $.post("{{url('admin/config/changeorder')}}", 
-                {'_token':'{{csrf_token()}}', 'conf_id':conf_id, 'conf_order': conf_order}, 
+        $.post("{{url('admin/config/changeorder')}}",
+                {'_token':'{{csrf_token()}}', 'conf_id':conf_id, 'conf_order': conf_order},
                 function(data){
                         alert(data.msg);
         });
@@ -109,13 +109,13 @@
         if(confirm("確認刪除?")){
             $.post("{{url('admin/config/')}}/"+conf_id,{'_method':'delete', '_token':'{{csrf_token()}}'}, function(data){
                 alert(data.msg);
-                if(data.status==0){    
+                if(data.status==0){
                     location.href=location.href;
                 }
             });
         }
     }
-    
+
 </script>
         <!-- /page content -->
 <!-- /page content -->

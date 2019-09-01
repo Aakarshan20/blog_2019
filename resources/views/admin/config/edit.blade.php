@@ -21,9 +21,9 @@
             </div>
         </div>
         <div class="clearfix"></div>
-        
+
         <div class="row">
-            
+
             <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel" style="text-align:center">
                     <div class="x_title">
@@ -34,7 +34,7 @@
                             <form action = '{{url('admin/config/' . $field->conf_id)}}' method = 'post'>
                                 {{method_field('PUT')}}
                                 {{csrf_field()}}
-                                
+
                                 @if(count($errors)>0)
                                     <div class="alert alert-danger" role="alert">
                                     @if(is_object($errors))
@@ -47,55 +47,55 @@
                                     </div>
                                 @endif
                                 <div class="item form-group row" style="text-align:right">
-                                    <label for="inputPassword3" class="col-sm-2 col-form-label" 
+                                    <label for="inputPassword3" class="col-sm-2 col-form-label"
                                            for="name2">* 標題</label>
                                     <div class="col-md-6 col-sm-6 col-xs-12">
                                         <input type="text" class="form-control" id="inputPassword3" name='conf_title'
-                                               placeholder="請輸入配置項標題" 
+                                               placeholder="請輸入配置項標題"
                                                value ="{{$field->conf_title}}" >
                                     </div>
                                 </div>
                                 <div class="item form-group row" style="text-align:right">
-                                    <label for="inputPassword3" class="col-sm-2 col-form-label" 
+                                    <label for="inputPassword3" class="col-sm-2 col-form-label"
                                            for="name2">* 名稱</label>
                                     <div class="col-md-6 col-sm-6 col-xs-12">
                                         <input type="text" class="form-control" id="inputPassword3" name='conf_name'
-                                               placeholder="請輸入配置項名稱" 
+                                               placeholder="請輸入配置項名稱"
                                                value ="{{$field->conf_name}}" >
                                     </div>
                                 </div>
                                 <div class="item form-group row" style="text-align:right">
                                     <label for="inputPassword3" class="col-sm-2 col-form-label">* 字段類型</label>
                                     <div class="col-md-6 col-sm-6 col-xs-12" style="text-align:left">
-                                        
+
                                       <input type="radio" name="field_type" id="typeInput" value="input"
                                              @if($field->field_type == 'input')
                                                 {{'checked="true"'}}
                                              @endif
                                              onclick="showFieldValue()"
-                                             required /> 
+                                             required />
                                       input　　
-                                      <input type="radio" name="field_type" id="typeTextarea" value="textarea" 
+                                      <input type="radio" name="field_type" id="typeTextarea" value="textarea"
                                             @if($field->field_type == 'textarea')
                                                 {{'checked="true"'}}
                                             @endif
                                             onclick="showFieldValue()"
                                             />
-                                      textarea　　      
-                                      <input type="radio" name="field_type" id="typeRadio" value="radio" 
+                                      textarea　　
+                                      <input type="radio" name="field_type" id="typeRadio" value="radio"
                                             @if($field->field_type == 'radio')
                                                 {{'checked="true"'}}
                                             @endif
                                             onclick="showFieldValue()"
                                             />
-                                      radio 
+                                      radio
                                     </div>
                                 </div>
                                 <div class="item form-group row field_value" style="text-align:right">
                                     <label for="inputPassword3" class="col-sm-2 col-form-label"> 類型值</label>
                                     <div class="col-md-6 col-sm-6 col-xs-12">
                                         <input type="text" class="form-control" id="inputPassword3" name='field_value'
-                                               placeholder="請輸入類型值: 只有類型為radio時才要配置" 
+                                               placeholder="請輸入類型值: 只有類型為radio時才要配置 1|開啟, 0|關閉"
                                                value ="{{$field->field_value}}" >
                                     </div>
                                 </div>
@@ -104,12 +104,12 @@
                                     <div class="col-md-2 col-sm-2 col-xs-12">
                                         <input type="text" class="form-control" id="inputPassword3" name='conf_order'
                                                value="{{$field->conf_order}}"
-                                               placeholder="請輸入排序" >          
+                                               placeholder="請輸入排序" >
                                     </div>
                                 </div>
                                 <div class="item form-group row" style="text-align:right">
                                     <label for="inputPassword3" class="col-sm-2 col-form-label"> 說明</label>
-                                    <div class="col-md-6 col-sm-6 col-xs-12">                                        
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
                                         <textarea class="resizable_textarea form-control" name="conf_tips"
                                               placeholder="請輸入說明">{{$field->conf_tips}}</textarea>
                                     </div>
@@ -117,7 +117,7 @@
                                 <div class="form-group row">
                                     <div class="col-sm-5">
                                         <button id='send' type="submit" class="btn btn-primary">確認修改</button>
-                                        <button id='send' type="submit" class="btn btn-light" 
+                                        <button id='send' type="submit" class="btn btn-light"
                                                 onclick="location.href='{{url('admin/index')}}'">返回</button>
                                     </div>
                                 </div>
