@@ -14,7 +14,7 @@ Route::group(['middleware' => ['web']], function () {
     //Route::get('/', function () {
     //  return view('welcome');
     //});
-    Route::get('/', 'IndexController@index');
+    Route::get('/', 'Home\IndexController@index');
 
     Route::any('admin/login', 'Admin\LoginController@login');
     Route::get('admin/code', 'Admin\LoginController@code');
