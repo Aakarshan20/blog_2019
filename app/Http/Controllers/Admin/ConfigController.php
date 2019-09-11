@@ -14,7 +14,7 @@ class ConfigController extends CommonController
     {
         $data = Config::orderBy('conf_order', 'asc')->paginate(15);
 
-        foreach ($data as  $v) {
+        foreach ($data as $v) {
             switch ($v->field_type) {
                 case 'input':
                     $v->_html = "<input type='text' name='conf_content[]' value='" . $v->conf_content . "' style='width:80%'>";
@@ -27,12 +27,12 @@ class ConfigController extends CommonController
                     $arr = explode(',', $v->field_value);
                     $str = "";
 
-                    foreach ($arr as  $n) {
+                    foreach ($arr as $n) {
 
                         $r = explode('|', $n);
                         $c = $v->conf_content == $r[0] ? ' checked ' : '';
 
-                        $str .= "<input type='radio' name='conf_content[]'  value='" . $r[0] .  "' ". $c .">  " . $r[1] . "  ";
+                        $str .= "<input type='radio' name='conf_content[]'  value='" . $r[0] . "' " . $c . ">  " . $r[1] . "  ";
                     }
                     $v->_html = $str;
 
@@ -207,12 +207,21 @@ class ConfigController extends CommonController
     }
 
     //修改配置項內容
-    public function changeContent(){
+    public function changeContent()
+    {
         $input = Input::all();
-        foreach($input['conf_id'] as $k=>$v){
-            Config::where('conf_id', '=', $v)->update(['conf_content'=>$input['conf_content'][$k]]);
+        foreach ($input['conf_id'] as $k => $v) {
+            Config::where('conf_id', '=', $v)->update(['conf_content' => $input['conf_content'][$k]]);
         }
-            //->with(['errors' => '設置更新成功']);
+        //->with(['errors' => '設置更新成功']);
         return back()->withErrors('設置更新成功');
+    }
+
+    public function putFile()
+    {
+        $config = Config::all();
+
+
+        dd($config);
     }
 }

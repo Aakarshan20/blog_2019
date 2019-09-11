@@ -10,9 +10,9 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::group(['middleware'=>['web']], function(){
+Route::group(['middleware' => ['web']], function () {
     //Route::get('/', function () {
-      //  return view('welcome');
+    //  return view('welcome');
     //});
     Route::get('/', 'IndexController@index');
 
@@ -22,10 +22,9 @@ Route::group(['middleware'=>['web']], function(){
 });
 
 
-
 Route::get('showPassword', 'Admin\LoginController@showPassword');
 
-Route::group(['prefix'=>'admin', 'namespace'=>'Admin', 'middleware'=>['web', 'admin.login']], function(){
+Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => ['web', 'admin.login']], function () {
     Route::get('/', 'IndexController@index');
     Route::get('index', 'IndexController@index');
     Route::get('quit', 'LoginController@quit');
@@ -35,18 +34,19 @@ Route::group(['prefix'=>'admin', 'namespace'=>'Admin', 'middleware'=>['web', 'ad
 
     Route::post('cate/changeorder', 'CategoryController@changeOrder');
 
-    Route::resource('category','CategoryController');
-    Route::resource('article','ArticleController');
+    Route::resource('category', 'CategoryController');
+    Route::resource('article', 'ArticleController');
 
-    Route::resource('links','LinksController');
+    Route::resource('links', 'LinksController');
     Route::post('links/changeorder', 'LinksController@changeOrder');
 
-    Route::resource('navs','NavsController');
+    Route::resource('navs', 'NavsController');
     Route::post('navs/changeorder', 'NavsController@changeOrder');
 
-    Route::resource('config','ConfigController');
-    Route::post('config/changeorder', 'ConfigController@changeOrder');
+    Route::get('config/putfile', 'ConfigController@putFile');
+    Route::resource('config', 'ConfigController');
 
+    Route::post('config/changeorder', 'ConfigController@changeOrder');
     Route::post('config/changecontent', 'ConfigController@changeContent');//修改配置項內容
 
 
