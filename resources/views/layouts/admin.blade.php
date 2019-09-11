@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Gentelella Alela! | </title>
-    
+
     <!-- Bootstrap -->
     <link href="{{ URL::asset('/vendors/bootstrap/dist/css/bootstrap.min.css') }}" rel="stylesheet">
     <!-- Font Awesome -->
@@ -17,7 +17,7 @@
     <link href="{{ URL::asset('/vendors/nprogress/nprogress.css') }}" rel="stylesheet">
     <!-- iCheck -->
     <link href="{{ URL::asset('/vendors/iCheck/skins/flat/green.css') }}" rel="stylesheet">
-	
+
     <!-- bootstrap-progressbar -->
     <link href="{{ URL::asset('/vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css') }}" rel="stylesheet">
     <!-- JQVMap -->
@@ -27,17 +27,17 @@
 
     <!-- Custom Theme Style -->
     <link href="{{ URL::asset('/build/css/custom.min.css') }}" rel="stylesheet">
-    
+
     <!--public\vendors\layer-->
     <script src="{{ URL::asset('/vendors/layer/layer.js') }}"></script>
     <!--<link href="{{ URL::asset('/vendors/layer/layer.js') }}" rel="stylesheet">-->
-    
+
     <!-- jQuery -->
     <script src="{{ URL::asset('vendors/jquery/dist/jquery.min.js') }}"></script>
-    
+
     <!--layer layui-->
     <script src="{{URL:: asset('vendors/layer/layer.js')}}"></script>
-    
+
   </head>
 
   <body class="nav-md">
@@ -63,7 +63,7 @@
             <!-- /menu profile quick info -->
 
             <br />
-            
+
             <!-- sidebar menu -->
             <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
               <div class="menu_section">
@@ -97,67 +97,67 @@
                       <li><a href="{{url('/admin/navs/create')}}">新增導航</a></li>
                     </ul>
                   </li>
-                  
+
                 <li><a><i class="fa fa-wrench"></i> 配置項管理 <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="{{url('/admin/config')}}">配置項列表</a></li>
                       <li><a href="{{url('/admin/config/create')}}">新增配置項</a></li>
                     </ul>
                   </li>
-                  <li><a><i class="fa fa-bar-chart-o"></i> Data Presentation <span class="fa fa-chevron-down"></span></a>
-                    <ul class="nav child_menu">
-                      <li><a href="chartjs.html">Chart JS</a></li>
-                      <li><a href="chartjs2.html">Chart JS2</a></li>
-                      <li><a href="morisjs.html">Moris JS</a></li>
-                      <li><a href="echarts.html">ECharts</a></li>
-                      <li><a href="other_charts.html">Other Charts</a></li>
-                    </ul>
-                  </li>
-                  
+{{--                  <li><a><i class="fa fa-bar-chart-o"></i> Data Presentation <span class="fa fa-chevron-down"></span></a>--}}
+{{--                    <ul class="nav child_menu">--}}
+{{--                      <li><a href="chartjs.html">Chart JS</a></li>--}}
+{{--                      <li><a href="chartjs2.html">Chart JS2</a></li>--}}
+{{--                      <li><a href="morisjs.html">Moris JS</a></li>--}}
+{{--                      <li><a href="echarts.html">ECharts</a></li>--}}
+{{--                      <li><a href="other_charts.html">Other Charts</a></li>--}}
+{{--                    </ul>--}}
+{{--                  </li>--}}
+
                 </ul>
               </div>
-              <div class="menu_section">
-                <h3>Live On</h3>
-                <ul class="nav side-menu">
-                  <li><a><i class="fa fa-bug"></i> Additional Pages <span class="fa fa-chevron-down"></span></a>
-                    <ul class="nav child_menu">
-                      <li><a href="e_commerce.html">E-commerce</a></li>
-                      <li><a href="projects.html">Projects</a></li>
-                      <li><a href="project_detail.html">Project Detail</a></li>
-                      <li><a href="contacts.html">Contacts</a></li>
-                      <li><a href="profile.html">Profile</a></li>
-                    </ul>
-                  </li>
-                  <li><a><i class="fa fa-windows"></i> Extras <span class="fa fa-chevron-down"></span></a>
-                    <ul class="nav child_menu">
-                      <li><a href="page_403.html">403 Error</a></li>
-                      <li><a href="page_404.html">404 Error</a></li>
-                      <li><a href="page_500.html">500 Error</a></li>
-                      <li><a href="plain_page.html">Plain Page</a></li>
-                      <li><a href="login.html">Login Page</a></li>
-                      <li><a href="pricing_tables.html">Pricing Tables</a></li>
-                    </ul>
-                  </li>
-                  <li><a><i class="fa fa-sitemap"></i> Multilevel Menu <span class="fa fa-chevron-down"></span></a>
-                    <ul class="nav child_menu">
-                        <li><a href="#level1_1">Level One</a>
-                        <li><a>Level One<span class="fa fa-chevron-down"></span></a>
-                          <ul class="nav child_menu">
-                            <li class="sub_menu"><a href="level2.html">Level Two</a>
-                            </li>
-                            <li><a href="#level2_1">Level Two</a>
-                            </li>
-                            <li><a href="#level2_2">Level Two</a>
-                            </li>
-                          </ul>
-                        </li>
-                        <li><a href="#level1_2">Level One</a>
-                        </li>
-                    </ul>
-                  </li>                  
-                  <li><a href="javascript:void(0)"><i class="fa fa-laptop"></i> Landing Page <span class="label label-success pull-right">Coming Soon</span></a></li>
-                </ul>
-              </div>
+{{--              <div class="menu_section">--}}
+{{--                <h3>Live On</h3>--}}
+{{--                <ul class="nav side-menu">--}}
+{{--                  <li><a><i class="fa fa-bug"></i> Additional Pages <span class="fa fa-chevron-down"></span></a>--}}
+{{--                    <ul class="nav child_menu">--}}
+{{--                      <li><a href="e_commerce.html">E-commerce</a></li>--}}
+{{--                      <li><a href="projects.html">Projects</a></li>--}}
+{{--                      <li><a href="project_detail.html">Project Detail</a></li>--}}
+{{--                      <li><a href="contacts.html">Contacts</a></li>--}}
+{{--                      <li><a href="profile.html">Profile</a></li>--}}
+{{--                    </ul>--}}
+{{--                  </li>--}}
+{{--                  <li><a><i class="fa fa-windows"></i> Extras <span class="fa fa-chevron-down"></span></a>--}}
+{{--                    <ul class="nav child_menu">--}}
+{{--                      <li><a href="page_403.html">403 Error</a></li>--}}
+{{--                      <li><a href="page_404.html">404 Error</a></li>--}}
+{{--                      <li><a href="page_500.html">500 Error</a></li>--}}
+{{--                      <li><a href="plain_page.html">Plain Page</a></li>--}}
+{{--                      <li><a href="login.html">Login Page</a></li>--}}
+{{--                      <li><a href="pricing_tables.html">Pricing Tables</a></li>--}}
+{{--                    </ul>--}}
+{{--                  </li>--}}
+{{--                  <li><a><i class="fa fa-sitemap"></i> Multilevel Menu <span class="fa fa-chevron-down"></span></a>--}}
+{{--                    <ul class="nav child_menu">--}}
+{{--                        <li><a href="#level1_1">Level One</a>--}}
+{{--                        <li><a>Level One<span class="fa fa-chevron-down"></span></a>--}}
+{{--                          <ul class="nav child_menu">--}}
+{{--                            <li class="sub_menu"><a href="level2.html">Level Two</a>--}}
+{{--                            </li>--}}
+{{--                            <li><a href="#level2_1">Level Two</a>--}}
+{{--                            </li>--}}
+{{--                            <li><a href="#level2_2">Level Two</a>--}}
+{{--                            </li>--}}
+{{--                          </ul>--}}
+{{--                        </li>--}}
+{{--                        <li><a href="#level1_2">Level One</a>--}}
+{{--                        </li>--}}
+{{--                    </ul>--}}
+{{--                  </li>--}}
+{{--                  <li><a href="javascript:void(0)"><i class="fa fa-laptop"></i> Landing Page <span class="label label-success pull-right">Coming Soon</span></a></li>--}}
+{{--                </ul>--}}
+{{--              </div>--}}
 
             </div>
             <!-- /sidebar menu -->
@@ -196,20 +196,20 @@
                     <span class=" fa fa-angle-down"></span>
                   </a>
                   <ul class="dropdown-menu dropdown-usermenu pull-right">
-                    <li><a href="javascript:;"> Profile</a></li>
+{{--                    <li><a href="javascript:;"> Profile</a></li>--}}
                     <li>
                       <a href="{{url('admin/pass')}}">修改密碼</a>
                     </li>
-                    <li><a href="javascript:;">Help</a></li>
-                    <li><a href="{{url('admin/quit')}}"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
+{{--                    <li><a href="javascript:;">Help</a></li>--}}
+                    <li><a href="{{url('admin/quit')}}"><i class="fa fa-sign-out pull-right"></i>登出</a></li>
                   </ul>
                 </li>
 
                 <li role="presentation" class="dropdown">
-                  <a href="javascript:;" class="dropdown-toggle info-number" data-toggle="dropdown" aria-expanded="false">
-                    <i class="fa fa-envelope-o"></i>
-                    <span class="badge bg-green">6</span>
-                  </a>
+{{--                  <a href="javascript:;" class="dropdown-toggle info-number" data-toggle="dropdown" aria-expanded="false">--}}
+{{--                    <i class="fa fa-envelope-o"></i>--}}
+{{--                    <span class="badge bg-green">6</span>--}}
+{{--                  </a>--}}
                   <ul id="menu1" class="dropdown-menu list-unstyled msg_list" role="menu">
                     <li>
                       <a>
@@ -288,7 +288,7 @@
       </div>
     </div>
 
-    
+
     <!-- Bootstrap -->
     <script src="{{ URL::asset('/vendors/bootstrap/dist/js/bootstrap.min.js') }}"></script>
     <!-- FastClick -->
@@ -319,7 +319,7 @@
     <script src="{{ URL::asset('/vendors/flot.curvedlines/curvedLines.js') }}"></script>
     <!-- DateJS -->
     <script src="{{ URL::asset('/vendors/DateJS/build/date.js') }}"></script>
-     <!--JQVMap--> 
+     <!--JQVMap-->
     <script src="{{ URL::asset('/vendors/jqvmap/dist/jquery.vmap.js') }}"></script>
     <script src="{{ URL::asset('/vendors/jqvmap/dist/maps/jquery.vmap.world.js') }}"></script>
     <script src="{{ URL::asset('/vendors/jqvmap/examples/js/jquery.vmap.sampledata.js') }}"></script>
