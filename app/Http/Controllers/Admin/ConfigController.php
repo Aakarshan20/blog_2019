@@ -86,6 +86,7 @@ class ConfigController extends CommonController
             $re = Config::create($input);
 
             if ($re) {
+                $this->putFile();//寫入檔案
                 return redirect('admin/config')->with(['success' => '設置新增成功']);
             } else {
                 return view('admin.config.add')->with(['errors' => '設置新增失敗']);
@@ -153,6 +154,7 @@ class ConfigController extends CommonController
             if (!isset($config)) {
                 return back()->withErrors('更新失敗, 請稍後重試');
             } else {
+                $this->putFile();//寫入檔案
                 if ($config->update($input)) {
                     return redirect('admin/config')->with(['success' => '設置更新成功']);
                 } else {
@@ -174,6 +176,7 @@ class ConfigController extends CommonController
             $re = $config->delete();
 
             if ($re) {
+                $this->putFile();//寫入檔案
                 return ['status' => 0, 'msg' => '設置刪除成功'];
             } else {
                 return ['status' => 1, 'msg' => '設置刪除失敗, 請稍後重試'];
@@ -213,15 +216,15 @@ class ConfigController extends CommonController
         foreach ($input['conf_id'] as $k => $v) {
             Config::where('conf_id', '=', $v)->update(['conf_content' => $input['conf_content'][$k]]);
         }
-        //->with(['errors' => '設置更新成功']);
+        $this->putFile();//寫入檔案
         return back()->withErrors('設置更新成功');
     }
 
     public function putFile()
     {
-        $config = Config::all();
-
-
-        dd($config);
+        $config = Config::pluck('conf_content', 'conf_name')->all();
+        $path = base_path() . '\config\web.php';
+        $str = '<?php return ' .var_export($config, true) . " ; ";
+        file_put_contents($path, $str);
     }
 }

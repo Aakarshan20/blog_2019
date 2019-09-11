@@ -152,7 +152,8 @@
                     '_token': '{{csrf_token()}}'
                 }, function (data) {
                     alert(data.msg);
-                    if (data.status == 0) {
+                    console.log(data);
+                    if (0 == data.status) {
                         location.href = location.href;
                     }
                 });
