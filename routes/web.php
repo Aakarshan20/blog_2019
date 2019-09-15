@@ -16,6 +16,16 @@ Route::group(['middleware' => ['web']], function () {
     //});
     Route::get('/', 'Home\IndexController@index');
 
+    Route::get('article', 'Home\IndexController@article');
+    Route::get('article2', 'Home\IndexController@article2');
+    Route::get('article3', 'Home\IndexController@article3');
+
+    Route::get('contact', 'Home\IndexController@contact');
+
+    Route::get('about', 'Home\IndexController@about');
+
+    Route::get('/', 'Home\IndexController@index');
+
     Route::any('admin/login', 'Admin\LoginController@login');
     Route::get('admin/code', 'Admin\LoginController@code');
     Route::get('admin/crypt', 'Admin\LoginController@crypt');
